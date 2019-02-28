@@ -17,11 +17,14 @@
                 studentMaker(19,"Bob","Biology")];
     var table=d3.select("body").append("table");
     var tr=table.selectAll("tr").data(student).enter().append("tr");
-    tr.append("td").text(function(d){return d.name}).style("color","red").style("font-size","20px").style("border","1px solid black").style("padding","5px");
+    tr.append("td").text(function(d){return d.name}).style("color","red").style("font-size","20px").style("border","1px solid black").style("padding","5px").style("background-color",function(d,i){
+                                                      if (i%2!=1){return "#9ba9c1"; }});
     tr.append("td").text(function(d){return d.age}).style("color",function(d){if (d.age>18){return "orange";}
-                                                                              else {return "black";}})
+                                                                              else {return "black";}}).style("background-color",function(d,i){
+                                                                                                                                if (i%2!=1){return "#9ba9c1"; }})
                                                                               .style("font-size","20px").style("border","1px solid black").style("padding","5px");
-    tr.append("td").text(function(d){return d.major}).style("color","blue").style("font-size","20px").style("border","1px solid black").style("padding","5px");
+    tr.append("td").text(function(d){return d.major}).style("color","blue").style("font-size","20px").style("border","1px solid black").style("padding","5px").style("background-color",function(d,i){
+                                                      if (i%2!=1){return "#9ba9c1"; }});
     table.style("border","1px solid black").style("border-collapse","collapse").style("margin","auto");
 
 

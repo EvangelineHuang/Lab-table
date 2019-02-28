@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="d3.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var studentMaker=function(age,name,major){
+        return {age:age,
+              name:name,
+              major:major}
+    }
+    var student=[studentMaker(19,"Amy","Math"),
+                studentMaker(18,"Mary","History"),
+                studentMaker(19,"Bob","Biology")];
+    var table=d3.select("body").append("table");
+    var tr=table.selectAll("tr").data(student).enter().append("tr");
+    tr.append("td").text(function(d){return d.name}).style("color","red").style("font-size","20px").style("border","1px solid black").style("padding","5px");
+    tr.append("td").text(function(d){return d.age}).style("color","orange").style("font-size","20px").style("border","1px solid black").style("padding","5px");
+    tr.append("td").text(function(d){return d.major}).style("color","blue").style("font-size","20px").style("border","1px solid black").style("padding","5px");
+    table.style("border","1px solid black").style("border-collapse","collapse").style("margin","auto");
+
+
+
+    </script>
+
+  </body>
+</html>
